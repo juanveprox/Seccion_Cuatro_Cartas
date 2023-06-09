@@ -1,0 +1,133 @@
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    
+    /* Neutral */
+
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);  
+    --Very-Light-Gray: hsl(0, 9%, 98%);
+}
+
+*{
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+body{
+    background-color: var(--Very-Light-Gray);
+}
+
+header{
+margin-top: 3rem;
+padding: 1.8rem;
+}
+
+.header__titulo{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 28rem;
+    font-size: 1.7rem;
+    font-weight: 200;
+}
+
+.header__titulo span {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--Very-Dark-Blue);
+}
+
+.header__parrafo{
+    margin: 0 auto;
+    margin-top: 1rem;
+    max-width: 35rem;
+    text-align: center;
+    color: var(--Grayish-Blue);
+}
+
+main{
+    padding: 1.8rem;
+    display: grid;
+    grid-template-columns: minmax(21.4rem,26rem);
+    row-gap: 1.5rem;
+    justify-content: center;
+}
+
+.main__item{
+    padding: 1.5rem;
+    border-radius: .4rem;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.189);
+}
+
+
+.main__item h2{
+    font-size: 1.3rem;
+    color: var(--Very-Dark-Blue);
+}
+
+.main__item p {
+    color: var(--Grayish-Blue);
+    margin-bottom: 2rem;
+
+}
+
+.main__item img {
+    float: right;
+}
+
+.main__supervisor{
+    border-top:4px solid var(--Cyan) ;
+}
+
+.main__builder{
+    border-top:4px solid var(--Red) ;
+}
+
+.main__karma{
+    border-top:4px solid var(--Orange) ;
+}
+
+.main__calculator{
+    border-top: 4px solid var(--Blue);
+}
+
+@media (min-width:800px){
+    .header__titulo{
+        max-width: 32rem;
+        font-size: 2rem;
+    }
+    .header__titulo span{
+        font-size: 2rem;
+    }
+    main{
+        grid-template-columns: repeat(3, minmax(15rem,26rem));
+        grid-template-rows: repeat(4,7rem);
+        grid-template-areas: 
+        ". builder ."
+        "supervisor builder calculator"
+        "supervisor karma calculator"
+        ". karma .";
+        gap: 1.5rem;
+        
+    }
+    .main__supervisor{
+        grid-area: supervisor;
+    }
+    
+    .main__builder{
+        grid-area: builder;
+    }
+    
+    .main__karma{
+        grid-area: karma;
+    }
+    
+    .main__calculator{
+        grid-area: calculator;
+    }
+}
